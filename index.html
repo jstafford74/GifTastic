@@ -40,6 +40,11 @@
       <!-- Button triggers new movie to be added -->
       <button id="add-gif" type="submit">Search for Gif</button>
     </form>
+    <div class="btn-group-vertical" id="#button-view">
+      <button type="button" class="btn btn-secondary">1</button>
+      <button type="button" class="btn btn-secondary">2</button>
+
+    </div>
     <div class="row">
       <div class="col s12">
         <div id="gifResults">
@@ -73,7 +78,7 @@
       // var gifURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + gifApiKey + "&limit=" + gifLimit;
       var topics = ["Conan Obrien", "Awkward", "Excitied", "Drunk", "Mind Blown", "Halloween", "Tom Brady"];
       var topic = $("#topic-input").val().trim();
-      // var gifLimit = $("#limit-input").val().trim();
+      var gifLimit = $("#limit-input").val().trim();
       var gifRating = $("#rating-input").val().trim();
 
 
@@ -97,11 +102,11 @@
             var p = $("<p>").text("Rating: " + results[i].rating);
 
             var gifImg = $("<img>");
-            gifImg.attr("class","gif");
+            gifImg.attr("class", "gif");
             gifImg.attr("src", results[i].images.fixed_height.url);
             gifImg.attr("data-still", results[i].images.fixed_height_still.url);
             gifImg.attr("data-animate", results[i].images.fixed_height.url);
-            gifImg.attr("data-state","still");
+            gifImg.attr("data-state", "still");
             gifDiv.append(p, gifImg);
             $('#gifResults').prepend(gifDiv);
           }
@@ -109,16 +114,30 @@
         });
       });
 
-      $(".gif").on("click", function() {
-      var state = $(this).attr("data-state");
-      if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-      } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-      }
-    });
+      $(".gif").on("click", function () {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
+
+      function renderButtons() {
+        $("#buttons-view").empty();                     // Deleting the movies prior to adding new movies
+
+        for (var i = 0; i < topics.length; i++) {
+        var gifBut = $("<button>");
+        gifBut.addClass("gif-btn");
+        gifBut.attr("data-topic", topics[i]);
+        gifBut.text(topics[i]);
+        $("#buttons-view").append(a);
+}
+}
+
+renderButtons();
     </script>
   </div>
 </body>
