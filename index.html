@@ -17,6 +17,10 @@
     input {
       margin: 10px;
     }
+
+    ul {
+      list-style: none;
+    }
   </style>
 </head>
 
@@ -31,7 +35,7 @@
     <form id="gif-form">
       <label for="topic-input">Topic</label>
       <input type="text" id="topic-input">
-      
+
       <br>
 
       <!-- Button triggers new gif to be added -->
@@ -39,42 +43,31 @@
     </form>
     <div class="row">
       <div class="col md-3">
-        <div id="button-view" >
-         
-        </div>
+        <ul id="button-view">
+
+        </ul>
       </div>
       <div class="col md-9">
         <div id="gifResults">
-          
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </div>
-  <!-- Gifs will Get Dumped Here -->
-  <div id="gif-view"></div>
-
+  </div>
+  
   <!-- Linked Script Sheets -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <!-- Firebase Core JavaScript Link -->
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+ <!-- Specific Firebase products we want (Database) -->
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/javascript/Giphy.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Firebase Core JavaScript Link -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
-  <!-- Specific Firebase products we want (Database) -->
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
-
  
-  </div>
+
+  
 </body>
 
 </html>
