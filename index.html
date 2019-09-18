@@ -7,7 +7,7 @@
   <!-- Linked Style Sheets -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="stylesheet" href="assets/css/style.css">     Unique stylesheet -->
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="assets/css/style.css">      Meyerweb reset stylesheet -->
 
   <style type="text/css">
@@ -18,8 +18,34 @@
       margin: 10px;
     }
 
+    body {
+      background-color: black;
+    }
+
     ul {
       list-style: none;
+    }
+
+    .banner {
+      color: rgb(35, 163, 35);
+      font-family: 'Indie Flower', cursive;
+
+    }
+
+    label {
+      color: rgb(35, 163, 35);
+      font-family: 'Indie Flower', cursive;
+    }
+
+    label,
+    #rating {
+      color: rgb(14, 61, 192);
+      font-family: 'Indie Flower', cursive;
+    }
+
+    li,button {
+      width: 150px;
+
     }
   </style>
 </head>
@@ -27,47 +53,61 @@
 <body>
 
   <div class="container">
-    <h1>GifTastic</h1>
-
-    <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="search-view"></div>
+    <div class="banner text-center">
+      <h1 class="display-2">GifTastic</h1>
+    </div>
 
     <form id="gif-form">
-      <label for="topic-input">Topic</label>
-      <input type="text" id="topic-input">
-
-      <br>
-
-      <!-- Button triggers new gif to be added -->
-      <button id="add-gif" type="submit">Search for Gif</button>
-    </form>
-    <div class="row">
-      <div class="col md-3">
-        <ul id="button-view">
-
-        </ul>
-      </div>
-      <div class="col md-9">
-        <div id="gifResults">
+      <div class="row">
+        <div class="col">
+          <label class="display-3" for="rating">Rating</label>
+          <input type="text" id="rating">
         </div>
+        <div class="col">
+          <label class="display-3" for="topic-input">Topic</label>
+          <input type="text" id="topic-input">
+        </div>
+        <div class="col">
+          <label class="display-3" for="limit"># Entries</label>
+          <input type="text" id="limit">
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Button triggers new gif to be added -->
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-primary btn-lg btn-block" id="add-gif" type="submit">Search for Gif</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col md-3">
+      <ul id="button-view">
+
+      </ul>
+    </div>
+    <div class="col md-9">
+      <div id="gifResults">
       </div>
     </div>
   </div>
   
-  
+
+
   <!-- Linked Script Sheets -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- <!-- Firebase Core JavaScript Link -->
- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
- <!-- Specific Firebase products we want (Database) -->
- <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <!-- Firebase Core JavaScript Link -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <!-- Specific Firebase products we want (Database) -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/javascript/Giphy.js"></script>
- 
 
-  
+
+
 </body>
 
 </html>
