@@ -73,11 +73,10 @@ function renderButtons(topics) {
         var gifLi = $('<li>');
         var gifBut = $('<button>');
 
-        gifBut.addClass("btn btn-outline-success btn-lg");
+        gifBut.addClass("btn btn-outline-success btn-lg viewGIF");
         gifBut.attr("data-topic", topics[i]);
-        gifBut.attr("formaction", gifURL);
+        gifBut.attr("data-url", gifURL);
         gifBut.attr("type", "submit");
-        gifBut.attr("name", "viewGIF");
         gifBut.attr("value", topics[i]);
         gifBut.text(topics[i].toUpperCase());
         gifLi.append(gifBut);
@@ -88,9 +87,10 @@ function renderButtons(topics) {
 
 
 //---------------Any Button Click Function--------------------
-$("button[name='viewGIF']").click(function () {
-    var gifURL = $(this)[0].attributes.formaction.value;
+$(document).on('click','.viewGIF',function () {
+    var gifURL = $(this).data('url');
    console.log($(this));
+   console.log(gifURL);
     src = [];
     stillURL = [];
     animeURL = [];
