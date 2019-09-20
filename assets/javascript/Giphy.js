@@ -14,7 +14,7 @@ $("#add-gif").on("click", function (event) {
     topics.push(topic);
     var gifRating = $("#rating")[0].value;
     var gifLimit = $("#limit")[0].value;
-    var gifURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + gifApiKey + "&limit=" + gifLimit;
+    var gifURL = "://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + gifApiKey + "&limit=" + gifLimit;
     src = [];
     stillURL = [];
     animeURL = [];
